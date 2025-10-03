@@ -58,6 +58,14 @@ export const OUI_THEMES: OUI_THEME[] = [
     text: 'v9 Dark',
     value: 'v9-dark',
   },
+  {
+    text: 'Ponyo Dark',
+    value: 'ponyo-dark',
+  },
+  {
+    text: 'Ponyo Light',
+    value: 'ponyo-light',
+  },
 ];
 
 /* OUI -> EUI Aliases */
