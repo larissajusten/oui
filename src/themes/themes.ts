@@ -59,12 +59,12 @@ export const OUI_THEMES: OUI_THEME[] = [
     value: 'v9-dark',
   },
   {
-    text: 'Ponyo Dark',
-    value: 'ponyo-dark',
-  },
-  {
     text: 'Ponyo Light',
     value: 'ponyo-light',
+  },
+  {
+    text: 'Ponyo Dark',
+    value: 'ponyo-dark',
   },
 ];
 

@@ -16,61 +16,61 @@ $ouiColorGhost: #E3E5E9;
 $ouiColorInk: #02020E;
 
 // Core
-$ouiColorPrimary: #0097D1;
-$ouiColorSecondary: #129079;
-$ouiColorAccent: #AA63C4;
+// Brighter, more vibrant versions for dark mode contrast.
+$ouiColorPrimary: #36A2EB !default;   // Inspired by Ponyo's magic
+$ouiColorSecondary: #4ECFA2 !default; // Inspired by the sea's magical flora
+$ouiColorAccent: #F9627D !default;    // Ponyo's Coral Red, vibrant on dark BG
 
 // Status
-$ouiColorSuccess: $ouiColorSecondary;
-$ouiColorWarning: #F4AE27;
-$ouiColorDanger: #CD5D56;
+$ouiColorSuccess: $ouiColorSecondary !default; // Inherits the vibrant magic green
+$ouiColorWarning: #F7B538 !default; // Sōsuke's Bucket Yellow, works well on dark
+$ouiColorDanger: #FF665A !default;  // A brighter, more alarming red for accessibility
 
-// Grays
-$ouiColorEmptyShade: #0F171F;
-$ouiColorLightestShade: #19222B;
-$ouiColorLightShade: #2A3540;
-$ouiColorMediumShade: #5C666F;
-$ouiColorDarkShade: #959BA2;
-$ouiColorDarkestShade: #E3E5E9;
-$ouiColorFullShade: #FCFEFF;
+// Grays (Themed as "Deep Sea" shades)
+// A custom ramp from a deep blue-black to a soft off-white.
+$ouiColorEmptyShade: #182C3B !default;    // Deep Sea Ink - Used for cards/surfaces
+$ouiColorLightestShade: #2A3947 !default; // Darker water
+$ouiColorLightShade: #5A6875 !default;    // Mid-tone water, borders
+$ouiColorMediumShade: #798189 !default;   // Subdued UI elements
+$ouiColorDarkShade: #A9B4C2 !default;     // Stormy Sky - Subdued text color
+$ouiColorDarkestShade: #E3E5E9 !default;  // Primary text color
+$ouiColorFullShade: #F5F5F3 !default;     // Ocean Foam - For titles & high emphasis
 
 // Backgrounds
-$ouiPageBackgroundColor: #02020E;
-$ouiColorHighlight: #3D2C0D;
+$ouiPageBackgroundColor: #11202C !default; // Deepest Sea - The base background
+$ouiColorHighlight: #493A1D !default;      // A deeper, less saturated highlight for dark mode
 
-// CodeBlock
-$ouiCodeBlockCommentShade: #838B93;
-$ouiCodeBlockStringShade: #D0809B;
-$ouiCodeBlockNameShade: #6AB0F1;
-$ouiCodeBlockNumberShade: #10B688;
-$ouiCodeBlockKeywordShade: #B174FC;
-$ouiCodeBlockTypeShade: #6AB0F1;
-$ouiCodeBlockTitleShade: #DD8232;
+// CodeBlock (Themed with the vibrant colors)
+$ouiCodeBlockCommentShade: #838B93 !default;
+$ouiCodeBlockStringShade: #F9627D !default;  // Accent/Red
+$ouiCodeBlockNameShade: #36A2EB !default;      // Primary/Blue
+$ouiCodeBlockNumberShade: #4ECFA2 !default;  // Secondary/Green
+$ouiCodeBlockKeywordShade: #B174FC !default;  // A complementary magical purple
+$ouiCodeBlockTypeShade: #36A2EB !default;      // Primary/Blue
+$ouiCodeBlockTitleShade: #F7B538 !default;   // Warning/Yellow
 
-// Variations from core
-$ouiTextColor: $ouiColorDarkShade;
-$ouiTitleColor: #C6C9CE;
-// Ensure contrast between subdued text and the page background
-// Should not be shaded as much as $ouiColorDisabled
-$ouiTextSubduedColor: #798189;
+// Variations from core (re-mapped to the new gray ramp)
+$ouiTextColor: $ouiColorDarkestShade !default; // Use the brighter gray for main text
+$ouiTitleColor: $ouiColorFullShade !default;     // Use the brightest off-white for titles
+$ouiTextSubduedColor: $ouiColorDarkShade !default;
 $ouiColorDisabled: $ouiColorLightestShade !default;
 
-// Contrasty text variants
+// Contrasty text variants (functions will recalculate based on new core colors)
 $ouiColorPrimaryText: makeHighContrastColor($ouiColorPrimary) !default;
 $ouiColorSecondaryText: makeHighContrastColor($ouiColorSecondary) !default;
 $ouiColorAccentText: makeHighContrastColor($ouiColorAccent) !default;
 $ouiColorWarningText: makeHighContrastColor($ouiColorWarning) !default;
 $ouiColorDangerText: makeHighContrastColor($ouiColorDanger) !default;
-$ouiColorDisabledText: #798189 !default;
+$ouiColorDisabledText: $ouiColorMediumShade !default;
 $ouiColorSuccessText: $ouiColorSecondaryText !default;
 $ouiLinkColor: $ouiColorPrimaryText !default;
 
 // Charts
-$ouiColorChartLines: $ouiColorLightShade;
-$ouiColorChartBand: tint($ouiColorLightestShade, 2.5%);
+$ouiColorChartLines: $ouiColorLightestShade; // Use a darker shade for lines
+$ouiColorChartBand: tint($ouiColorEmptyShade, 5%);
 
 // Code
-$ouiCodeBlockBackgroundColor: $ouiColorLightestShade;
+$ouiCodeBlockBackgroundColor: $ouiColorEmptyShade; // Use the card color for code blocks
 
 // Shadows
 $ouiShadowColor: #000;
@@ -86,6 +86,7 @@ $ouiCodeBlockTypeColor: $ouiCodeBlockTypeShade;
 $ouiCodeBlockTitleColor: $ouiCodeBlockTitleShade;
 
 /* OUI -> EUI Aliases */
+// These will all inherit the changes made above automatically.
 $euiCodeBlockCommentColor: $ouiCodeBlockCommentColor;
 $euiCodeBlockStringColor: $ouiCodeBlockStringColor;
 $euiCodeBlockNameColor: $ouiCodeBlockNameColor;
