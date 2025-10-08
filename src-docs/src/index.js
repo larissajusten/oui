@@ -38,10 +38,10 @@ registerTheme('light', [themeLight]);
 registerTheme('dark', [themeDark]);
 registerTheme('next-light', [themeNextLight]);
 registerTheme('next-dark', [themeNextDark]);
-registerTheme('ponyo-light', [themePonyoLight]);
-registerTheme('ponyo-dark', [themePonyoDark]);
 registerTheme('v9-light', [themeV9Light]);
 registerTheme('v9-dark', [themeV9Dark]);
+registerTheme('ponyo-light', [themePonyoLight]);
+registerTheme('ponyo-dark', [themePonyoDark]);
 
 // Set up app
 
