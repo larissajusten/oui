@@ -85,7 +85,7 @@ Standard palette colors are opaque. To create natural-looking effects like shado
 
 When you add too much content to the panel, as in the screenshot below, it tends to cut off the content abruptly.
 
-// TODO: Add panel screenshot without "shadow"
+<img width="1301" height="390" alt="Captura de Tela 2025-10-08 às 04 13 51" src="https://github.com/user-attachments/assets/4d6825e6-aea0-4db4-bc98-925dddd93c30" />
 
 To prevent this, I would add a "box shadow". Since seems like its a plugin, and not the code from the oui lib, I added a pseudo element with background from the theme into the [visualization class](src/plugins/visualizations/public/components/_visualization.scss).
 
@@ -106,7 +106,8 @@ To prevent this, I would add a "box shadow". Since seems like its a plugin, and 
   }
 ```
 
-// TODO: Add panel screenshot with "shadow"
+<img width="1243" height="255" alt="Captura de Tela 2025-10-08 às 05 43 26" src="https://github.com/user-attachments/assets/9b921257-cc42-4189-9777-9565306eb71e" />
+
 
 ---
 
@@ -189,7 +190,8 @@ When linking a local OUI fork to OpenSearch Dashboards:
 
 By isolating the problem within the HEX color, we can find not only the source of the problem, but also the path. Knowing that the color was `#5A6875` ($ouiColorLightShade) from the Ponyo palette, we found all the places where it was used. By adding a debug to the only related @while function, we also found the source.
 
-// TODO: Add photo console (debug)
+<img width="1160" height="610" alt="Captura de Tela 2025-10-08 às 05 20 58" src="https://github.com/user-attachments/assets/d3418acf-b852-428b-b23f-2db8fd3ba664" />
+
 
 `foreground #798189` and `background #6d7a85`: This is the root cause. These two colors are both dark mid-grays with very similar lightness levels. The contrast ratio between them is extremely low to begin with (around 1.15:1).
 
@@ -214,3 +216,11 @@ This is like asking a chef to make a vibrant, colorful meal using only two sligh
 ## 5.0 Changelog
 
 * **v1.0.0** (2025-10-04) - Initial release of the Ponyo Color System documentation.
+
+## 6.0 Screenshots
+
+<img width="1466" height="730" alt="Captura de Tela 2025-10-08 às 06 01 25" src="https://github.com/user-attachments/assets/9293c94a-74b2-42f2-94a0-30400f716298" />
+<img width="469" height="443" alt="Captura de Tela 2025-10-08 às 06 03 32" src="https://github.com/user-attachments/assets/b87cd65d-8acb-4362-b196-c9c9056eee60" />
+<img width="1915" height="853" alt="Captura de Tela 2025-10-08 às 06 01 57" src="https://github.com/user-attachments/assets/693e266e-1342-4dd1-99f0-d5f4c60b4c9b" />
+
+
