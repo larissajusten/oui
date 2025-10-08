@@ -129,6 +129,38 @@
   }
 }
 
+@mixin ouiUseAnimatedBorderWipe($useAnimatedBorder: true, $color: $ouiColorPrimary, $width: 2px, $duration: 0.3s) {
+  @if ($useAnimatedBorder) {
+    position: relative;
+    overflow: hidden;
+
+    // The pseudo-element that creates the border effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: $width solid $color;
+      border-radius: inherit;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform $duration ease-in-out;
+    }
+
+    &:not([class*='isDisabled']) {
+      &:hover,
+      &:focus,
+      &:focus-within {
+        &::before {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
 /* OUI -> EUI Aliases */
 @mixin euiButtonBase { @include ouiButtonBase; }
 @mixin euiButtonFocus { @include ouiButtonFocus; }
@@ -153,4 +185,17 @@
   }
 }
 @mixin euiUseDefaultButtonShadows($useShadows: false) { @include ouiUseDefaultButtonShadows($useShadows); }
+@mixin euiUseAnimatedBorderWipe(
+  $useAnimatedBorder: true, 
+  $color: $ouiColorPrimary,
+  $width: 2px,
+  $duration: 0.3s
+) {
+  @include ouiUseAnimatedBorderWipe(
+    $useAnimatedBorder,
+    $color,
+    $width,
+    $duration
+  );
+}
 /* End of Aliases */

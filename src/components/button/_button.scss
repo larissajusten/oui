@@ -19,6 +19,8 @@
     @include ouiSlightShadow;
   }
 
+  @include ouiUseAnimatedBorderWipe;
+
   border-radius: $ouiButtonBorderRadius;
   min-width: $ouiButtonMinWidth;
 
